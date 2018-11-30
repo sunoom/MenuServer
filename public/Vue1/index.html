@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./libs/css/elment.css">
+</head>
+<body>
+	<script type="text/javascript" src="./libs/js/vue.js"></script>
+	<script type="text/javascript" src="./libs/js/axios.js"></script>
+	<script type="text/javascript" src="./libs/js/elment.js"></script>
+	<div id="App">
+		
+	</div>
+
+	<script type="text/javascript">
+		new Vue({
+			el:"#App",
+			data:{	
+			},
+			mounted:function(){
+				// axios.create({
+				// 	baseURL: 'http://www.lar.com/',
+				// 	headers:{
+				// 	    'Content-Type':'application/x-www-form-urlencoded'
+				// 	},
+				// 	transformRequest: [function (data) {
+					    
+				// 	    data = Qs.stringify(data);
+				// 	    return data;
+				// 	}],
+				// 	withCredentials:true   //加了这段就可以跨域了 
+				// });
+				var self=this;
+				axios.post(
+					'http://www.lar.com/user/login',
+					{
+						username:'aa',
+						password:'aa'
+					},
+					{withCredentials:true}).then(function(res){
+					console.log(res);
+				})
+			}
+		})
+
+	</script>
+</body>
+</html>
